@@ -42,7 +42,7 @@
           <div class="pricing-table">
             <!-- Plan Price  -->
             <div class="pricing-plan text-center">
-              <img class="img-75" src="images/crown.png" alt="price-icon" />
+              <img class="img-75" src="assests/images/crown.png" alt="price-icon" />
               <h5 class="h5-md">Premium Monthly</h5>
               <p class="grey-color">For just $11.99 per month, you get:</p>
             </div>

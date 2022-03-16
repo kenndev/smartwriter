@@ -30,58 +30,7 @@
         <!-- HERO REGISTER FORM -->
         <div class="col-md-5">
           <div id="register-form">
-            <form name="registerForm" class="row register-form">
-              <!-- Form Input -->
-              <div id="input-name" class="col-md-12">
-                <p>Your Name*</p>
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control name"
-                  placeholder="Enter Your Name*"
-                  required
-                />
-              </div>
-
-              <!-- Form Input -->
-              <div id="input-email" class="col-md-12">
-                <p>Your Email*</p>
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control email"
-                  placeholder="Enter Your Email*"
-                  required
-                />
-              </div>
-
-              <!-- Form Input -->
-              <div id="input-phone" class="col-md-12">
-                <p>Your Pnone Number*</p>
-                <input
-                  type="tel"
-                  name="phone"
-                  class="form-control phone"
-                  placeholder="Enter Your Phone Number*"
-                  required
-                />
-              </div>
-
-              <!-- Form Button -->
-              <div class="col-md-12 form-btn">
-                <button
-                  type="submit"
-                  class="btn btn-md btn-rose tra-black-hover submit"
-                >
-                  Register Now
-                </button>
-              </div>
-
-              <!-- Form Message -->
-              <div class="col-md-12 register-form-msg text-center">
-                <span class="loading"></span>
-              </div>
-            </form>
+              <OrderForm />
           </div>
         </div>
         <!-- END HERO REGISTER FORM -->
@@ -93,8 +42,8 @@
   <!-- END HERO-9 -->
 </template>
 
-<script>
-export default {};
+<script setup>
+import OrderForm from "./OrderForm.vue";
 </script>
 
 <style></style>

@@ -35,11 +35,13 @@ const store = createStore({
       state.user.data = {};
       state.user.token = null;
       sessionStorage.removeItem('TOKEN');
+      sessionStorage.removeItem("User");
     },
     setUser: (state, userData) => {
       state.user.token = userData.token;
       state.user.data = userData.user;
       sessionStorage.setItem("TOKEN", userData.token);
+      sessionStorage.setItem("User", userData.user);
     },
   },
   modules: {},

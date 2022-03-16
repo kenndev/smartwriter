@@ -64,7 +64,7 @@ video {
 .wsmenucontainer {
   background-size: cover;
   background-image: url(../images/bg01.jpg);
-  overflow: hidden;
+  /* overflow: hidden; */
   background-attachment: fixed;
   background-position: 50% 0;
   background-repeat: no-repeat;

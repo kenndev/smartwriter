@@ -1,6 +1,13 @@
 <template>
   <header-component />
-  <bread-crumps title="About" />
+  <BreadCrumps>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <router-link :to="{ name: 'Home' }">Home</router-link>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">About Us</li>
+    </ol>
+  </BreadCrumps>
   <services-component />
 </template>
 

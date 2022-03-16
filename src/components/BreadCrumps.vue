@@ -7,14 +7,7 @@
         <!-- BREADCRUMB NAV -->
         <div class="col-md-12">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <router-link :to="{ name: 'Home' }">Home</router-link>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                {{ title }}
-              </li>
-            </ol>
+            <slot></slot>
           </nav>
         </div>
       </div>
@@ -25,12 +18,7 @@
   <!-- END BREADCRUMB -->
 </template>
 
-<script>
-export default {
-  props: {
-    title: String,
-  },
-};
+<script setup>
 </script>
 
 <style></style>

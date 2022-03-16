@@ -1,18 +1,18 @@
 <template>
-  
+  <div id="page" class="page" :class="path == '/home'? '': 'inner-page-wrapper'">
     <header-component />
     <router-view />
     <footer-component />
-
+  </div>
 </template>
 
-<script>
+<script setup>
 import FooterComponent from "./FooterComponent.vue";
 import HeaderComponent from "./HeaderComponent.vue";
-export default {
-  components: { HeaderComponent, FooterComponent },
-  name: "DefaultLayout",
-};
+import { useRoute } from "vue-router";
+import {computed} from "vue";
+const route = useRoute();
+const path = computed(() => route.path);
 </script>
 
 <style></style>
