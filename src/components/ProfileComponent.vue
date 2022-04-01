@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row">
         <!-- TEACHER PHOTO -->
-        <div class="col-md-5">
+        <div class="col-md-5 stick">
           <div id="register-form">
             <OrderForm />
           </div>
@@ -16,6 +16,7 @@
         <!-- TEACHER DATA -->
         <div class="col-md-7">
           <div class="team-3-txt">
+            
             <OrderComponent />
           </div>
         </div>
@@ -28,37 +29,9 @@
   <!-- END TEAM-3 -->
 </template>
 
-<script>
-import { useStore } from "vuex";
-import { computed } from "vue";
-import { useRouter } from "vue-router";
+<script setup>
 import OrderForm from "./OrderForm.vue";
 import OrderComponent from "./OrderComponent.vue";
-export default {
-  name: "ProfileComponent",
-  components: {
-    OrderForm,
-    OrderComponent
-  },
-
-  setup() {
-    const store = useStore();
-    const router = useRouter();
-
-    const logout = () => {
-      store.dispatch("logout").then(() => {
-        router.push({
-          name: "Login",
-        });
-      });
-    };
-
-    return {
-      user: computed(() => store.state.user.data),
-      logout,
-    };
-  },
-};
 </script>
 
 <style></style>

@@ -61,7 +61,7 @@
               />
             </div>
 
-            <div class="text-center mt-4 pt-2">
+            <div class="mt-4 pt-2">
               <button
                 type="submit"
                 class="btn btn-rose tra-black-hover submit"
@@ -69,6 +69,12 @@
               >
                 Register
               </button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+               Already have an account?
+                <router-link :to="{ name: 'Login' }" class="link-danger"
+                  >Go back to login</router-link
+                >
+              </p>
             </div>
           </form>
         </div>
@@ -92,12 +98,11 @@ const user = {
 
 const register = (ev) => {
   ev.preventDefault();
-  store.dispatch('register', user)
-    .then(() => {
-        router.push({
-          name: 'Profile'
-        })
-    })
+  store.dispatch("register", user).then(() => {
+    router.push({
+      name: "Profile",
+    });
+  });
 };
 </script>
 

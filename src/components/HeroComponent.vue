@@ -8,21 +8,17 @@
         <div class="col-md-7">
           <div class="hero-txt mb-40 white-color">
             <!-- Title -->
-            <h3>Online and in-class learning <span>with eTreeks</span></h3>
+            <h3>Get Your Paper Done By <span>Expert Writers</span></h3>
 
             <!-- Text -->
             <p class="p-md">
-              Feugiat primis ligula risus auctor egestas an augue mauri viverra
-              tortor in iaculis placerat eugiat mauris ipsum viverra in tortor
-              and gravida purus lorem in tortor dolor and iaculis
+              Professional academic writing experts ready to write for you
+              original papers. We are online 24/7 and always responsive. What
+              are you waiting for? Place your order today and experience our
+              quality and timely delivery.
             </p>
 
             <!-- Button -->
-            <a
-              href="categories-list.html"
-              class="btn btn-md btn-rose tra-white-hover"
-              >View All Categories</a
-            >
           </div>
         </div>
         <!-- END HERO TEXT -->
@@ -30,7 +26,7 @@
         <!-- HERO REGISTER FORM -->
         <div class="col-md-5">
           <div id="register-form">
-              <OrderForm />
+            <OrderForm />
           </div>
         </div>
         <!-- END HERO REGISTER FORM -->

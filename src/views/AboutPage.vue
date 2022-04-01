@@ -1,5 +1,4 @@
 <template>
-  <header-component />
   <BreadCrumps>
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
@@ -8,17 +7,17 @@
       <li class="breadcrumb-item active" aria-current="page">About Us</li>
     </ol>
   </BreadCrumps>
-  <services-component />
+  <AboutComponent />
+  <GuaranteeServices />
+  <HeroComponent />
 </template>
 
-<script>
+<script setup>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import BreadCrumps from "@/components/BreadCrumps.vue";
-import ServicesComponent from "@/components/ServicesComponent.vue";
-export default {
-  name: "AboutPage",
-  components: { HeaderComponent, BreadCrumps, ServicesComponent },
-};
+import AboutComponent from "@/components/AboutComponent.vue";
+import GuaranteeServices from "@/components/GuaranteesServices.vue";
+import HeroComponent from "../components/HeroComponent.vue";
 </script>
 
 <style></style>

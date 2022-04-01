@@ -84,6 +84,12 @@
                   >Register</router-link
                 >
               </p>
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+               
+                <a target="_blank" href="http://expertwritersdashboard.thetradinghut.net/login" class="link-danger"
+                  > Login to admin dashboard</a
+                >
+              </p>
             </div>
           </form>
         </div>

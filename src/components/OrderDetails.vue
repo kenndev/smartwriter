@@ -3,6 +3,7 @@
     id="content-2"
     class="bg-whitesmoke wide-60 pt-50 content-section division"
   >
+   
     <div class="container">
       <div class="row d-flex align-items-center">
         <!-- COURSE DESCRIPTION -->

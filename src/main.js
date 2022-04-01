@@ -3,12 +3,32 @@ import App from "./App.vue";
 import store from "./store";
 import router from "./router";
 import Toast from "vue-toastification";
-// Import the CSS or use your own!
-import "vue-toastification/dist/index.css";
+import VueProgressBar from "@aacassandra/vue3-progressbar";
+
+
+
+const option = {
+  color: "#109d87",
+  failedColor: "#874b4b",
+  thickness: "3px",
+  transition: {
+    speed: "0.2s",
+    opacity: "0.6s",
+    termination: 300,
+  },
+  autoRevert: true,
+  location: "top",
+  inverse: false,
+  position: "relative"
+};
 
 const options = {
   // You can set your default options here
 };
 
-
-createApp(App).use(store).use(router).use(Toast, options).mount("#app");
+export default createApp(App)
+  .use(store)
+  .use(router)
+  .use(Toast, options)
+  .use(VueProgressBar, option)
+  .mount("#app");

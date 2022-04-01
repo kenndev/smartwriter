@@ -8,6 +8,7 @@ import ProfilePage from "../views/ProfilePage";
 import OrderPage from "../views/OrderPage";
 import OrderEdit from "../views/EditOrder";
 import OrderDetails from "../views/OrderDetails";
+import ContactusPage from "@/views/ContactusPage";
 import store from "../store";
 
 const routes = [
@@ -16,8 +17,16 @@ const routes = [
     redirect: "/home",
     component: DefaultLayout,
     children: [
-      { path: "/home", name: "Home", component: Home },
-      { path: "/about", name: "About", component: AboutPage },
+      {
+        path: "/home",
+        name: "Home",
+        component: Home,
+      },
+      {
+        path: "/about",
+        name: "About",
+        component: AboutPage,
+      },
       {
         path: "/order",
         name: "Order",
@@ -26,15 +35,20 @@ const routes = [
           ...route.query,
         }),
       },
+      {
+        path: "/contact-us",
+        name: "ContactUs",
+        component: ContactusPage,
+      },
     ],
   },
   {
-    path: "/profile",
-    redirect: "/profile",
+    path: "/my-orders",
+    redirect: "/my-orders",
     component: DefaultLayout,
     meta: { requiresAuth: true },
     children: [
-      { path: "/profile", name: "Profile", component: ProfilePage },
+      { path: "/my-orders", name: "Profile", component: ProfilePage },
       {
         path: "/order-details",
         name: "Details",
@@ -69,13 +83,29 @@ const router = createRouter({
   history: createWebHistory(),
   mode: "history",
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    //return { left: 0, top: 0 }
+    return window.scrollTo({top: 0, behavior: 'smooth'});    
+    // if (savedPosition) {
+    //   console.log("SavedPosition")
+    //   return savedPosition;
+    // }
+    // if (to.hash) {
+    //   console.log("Hash shit");
+    //   return { el: to.hash, behavior: "smooth" };
+    // } else {
+    //   console.log("moving to top of the page");
+    //   window.scrollTo({top: 0, behavior: 'smooth'});
+    // }
+  },
 });
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.state.user.token) {
     next({ name: "Login" });
   } else if (store.state.user.token && to.meta.isGuest) {
-    next({ name: "Profile" });
+    next({ name: "MyOrders" });
   } else {
     next();
   }

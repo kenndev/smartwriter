@@ -2,16 +2,16 @@
 /* global document */
 
 jQuery(function () {
-  'use strict';
-
+  
   document.addEventListener("touchstart", function () {}, false);
   jQuery(function () {
 
     jQuery('body').wrapInner('<div class="wsmenucontainer" />');
     jQuery('<div class="overlapblackbg"></div>').prependTo('.wsmenu');
 
-    jQuery('#wsnavtoggle').click(function () {
+    jQuery('.wsnavtoggle').click(function () {
       jQuery('body').toggleClass('wsactive');
+     
     });
 
     jQuery('.overlapblackbg').click(function () {
@@ -22,6 +22,7 @@ jQuery(function () {
     jQuery('.wsmenu > .wsmenu-list > li').has('.wsmegamenu').prepend('<span class="wsmenu-click"><i class="wsmenu-arrow"></i></span>');
 
     jQuery('.wsmenu-click').click(function () {
+      
       jQuery(this).toggleClass('ws-activearrow')
         .parent().siblings().children().removeClass('ws-activearrow');
       jQuery(".wsmenu > .wsmenu-list > li > .sub-menu, .wsmegamenu").not(jQuery(this).siblings('.wsmenu > .wsmenu-list > li > .sub-menu, .wsmegamenu')).slideUp('slow');
@@ -33,6 +34,7 @@ jQuery(function () {
     jQuery('.wsmenu > .wsmenu-list > li > ul > li > ul > li').has('.sub-menu').prepend('<span class="wsmenu-click02"><i class="wsmenu-arrow"></i></span>');
 
     jQuery('.wsmenu-click02').click(function () {
+
       jQuery(this).children('.wsmenu-arrow').toggleClass('wsmenu-rotate');
       jQuery(this).siblings('li > .sub-menu').slideToggle('slow');
     });

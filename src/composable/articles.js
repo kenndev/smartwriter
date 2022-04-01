@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import axiosClient from "../axios";
+import axiosClient from "@/axios";
 import { useToast } from "vue-toastification";
 export default function useArticles() {
   const resources = ref([]);

@@ -1,12 +1,20 @@
 <template>
+  <BreadCrumps>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <router-link :to="{ name: 'Home' }">Home</router-link>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Order page</li>
+    </ol>
+  </BreadCrumps>
   <!-- COURSE DETAILS
 				============================================= -->
   <section
-    id="course-details"
+    id=""
     class="wide-40 bg-whitesmoke course-section division"
   >
     <div class="container">
-      <div class="row mt-4">
+      <div class="row">
         <!-- COURSE DESCRIPTION -->
         <div class="col-lg-8">
           <div class="course-txt pr-30">
@@ -47,19 +55,23 @@
                 <h5 class="h3-xl">$ {{ formD.price }}</h5>
               </div>
             </div>
-            <!-- Links -->
+
             <div class="course-data-links">
-              <!-- <button
-                @click="checkOut"
-                type="button"
-                class="btn btn-md btn-rose tra-grey-hover"
-              >
-                Place Order
-              </button> -->
               <hr />
-              <div id="smart-button-container">
+              <div id="smart-button-container" v-if="store.state.user.token">
                 <div style="text-align: center">
                   <div id="paypal-button-container"></div>
+                </div>
+              </div>
+              <div id="smart-button-container" v-if="!store.state.user.token">
+                <div style="text-align: center">
+                  <router-link
+                    :to="{ name: 'Login' }"
+                    type="button"
+                    class="btn btn-md btn-rose tra-grey-hover"
+                  >
+                    Login to place order
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -79,6 +91,7 @@ import { reactive, ref } from "vue";
 import store from "../store";
 import useArticles from "../composable/articles";
 import router from "../router";
+import BreadCrumps from "@/components/BreadCrumps.vue";
 
 const formD = ref([]);
 const topic = ref("");
@@ -124,56 +137,58 @@ const checkOut = () => {
 };
 
 const initPayPalButton = () => {
-  let actionStatus;
-  paypal
-    .Buttons({
-      style: {
-        shape: "rect",
-        color: "gold",
-        layout: "vertical",
-        label: "paypal",
-      },
+  if (store.state.user.token) {
+    let actionStatus;
+    paypal
+      .Buttons({
+        style: {
+          shape: "rect",
+          color: "gold",
+          layout: "vertical",
+          label: "paypal",
+        },
 
-      onInit: function (data, actions) {
-        actions.enable();
-      },
+        onInit: function (data, actions) {
+          actions.enable();
+        },
 
-      onClick: function () {
-        if (!placeOrder.value.validateForm()) {
-          //actions.disable();
-          return false;
-        } else {
-          //actions.enable();
-          return true;
-        }
-      },
-      createOrder: function (data, actions) {
-        return actions.order.create({
-          purchase_units: [
-            { amount: { currency_code: "USD", value: formD.value.price } },
-          ],
-        });
-      },
+        onClick: function () {
+          if (!placeOrder.value.validateForm()) {
+            //actions.disable();
+            return false;
+          } else {
+            //actions.enable();
+            return true;
+          }
+        },
+        createOrder: function (data, actions) {
+          return actions.order.create({
+            purchase_units: [
+              { amount: { currency_code: "USD", value: formD.value.price } },
+            ],
+          });
+        },
 
-      onApprove: async function (data, actions) {
-        const order = await actions.order.capture();
+        onApprove: async function (data, actions) {
+          const order = await actions.order.capture();
 
-        orderDetails.order_id = order.id;
-        orderDetails.status = order.status;
-        orderDetails.email = order.payer.email_address;
-        orderDetails.given_name = order.payer.name.given_name;
-        orderDetails.surname = order.payer.name.surname;
+          orderDetails.order_id = order.id;
+          orderDetails.status = order.status;
+          orderDetails.email = order.payer.email_address;
+          orderDetails.given_name = order.payer.name.given_name;
+          orderDetails.surname = order.payer.name.surname;
 
-        placeOrder.value.placeOrder(orderDetails);
+          placeOrder.value.placeOrder(orderDetails);
 
-        router.push({ name: "Profile" });
-      },
+          router.push({ name: "Profile" });
+        },
 
-      onError: function (err) {
-        console.log(err);
-      },
-    })
-    .render("#paypal-button-container");
+        onError: function (err) {
+          console.log(err);
+        },
+      })
+      .render("#paypal-button-container");
+  }
 };
 
 const script = document.createElement("script");
@@ -183,7 +198,7 @@ script.addEventListener("load", initPayPalButton);
 document.body.appendChild(script);
 </script>
 
-<style scoped>
+<style>
 .stick {
   position: relative !important;
   position: sticky !important;

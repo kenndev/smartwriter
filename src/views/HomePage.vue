@@ -1,18 +1,24 @@
 <template>
   <hero-component />
-  <services-component />
+  <GuaranteeServices />
   <pricing-component />
+  <ContentComponent />
+  <ContentComponentSecond />
 </template>
 
 <script>
 import HeroComponent from "../components/HeroComponent.vue";
-import ServicesComponent from "../components/ServicesComponent.vue";
 import PricingComponent from "../components/PricingComponent.vue";
+import GuaranteeServices from "@/components/GuaranteesServices.vue";
+import ContentComponent from "@/components/ContentComponent.vue";
+import ContentComponentSecond from "@/components/ContentComponentSecond.vue";
 export default {
   components: {
     HeroComponent,
-    ServicesComponent,
     PricingComponent,
+    GuaranteeServices,
+    ContentComponent,
+    ContentComponentSecond,
   },
 };
 </script>
