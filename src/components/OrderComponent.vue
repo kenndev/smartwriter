@@ -2,10 +2,16 @@
   <div class="cbox-5 b-bottom" v-for="order in orders" :key="order.id">
     <div class="row">
       <!-- Course Description -->
-      <div class="col-sm-7 cbox-5-txt">
-        <h5 class="h5-xs">
-          {{ order.topic }}
-        </h5>
+      <div class="col-sm-12 cbox-5-txt">
+        <div class="d-flex justify-content-between">
+          <h5 class="h5-xs">
+            {{ order.topic }}
+          </h5>
+          <div class="cbox-5-price text-right clearfix">
+            <span class="course-price">${{ order.total_price }}</span>
+          </div>
+        </div>
+
         <ul class="txt-list mb-15">
           <li>
             {{ order.paper_type }}
@@ -16,7 +22,7 @@
             {{ order.discipline }}
           </li>
         </ul>
-        <p class="p-sm grey-color">{{ order.paper_instruction }}</p>
+        <p class="p-sm grey-color" v-html="order.paper_instruction.slice(0,400) + ' ...'" ></p>
         <!-- Rating -->
         <i
           @click="edit(order)"
@@ -31,14 +37,11 @@
       </div>
 
       <!-- Course Data -->
-      <div class="col-sm-3 cbox-5-data text-center clearfix">
-        <p class="grey-color"></p>
-      </div>
+      <!-- <div class="col-sm-3 cbox-5-data text-center clearfix">
+        <p class="grey-color">fdgsdfgdfhdfghfghdfghfgd</p>
+      </div> -->
 
       <!-- Course Price -->
-      <div class="col-sm-2 cbox-5-price text-right clearfix">
-        <span class="course-price">${{ order.total_price }}</span>
-      </div>
     </div>
   </div>
 </template>

@@ -64,7 +64,7 @@
                 class="nl-simple"
                 aria-haspopup="true"
               >
-                <a @click="hrefClicked('Orders')">Orders</a>
+                <a @click="hrefClicked('Profile')">Orders</a>
               </li>
               <li
                 v-if="!store.state.user.token"

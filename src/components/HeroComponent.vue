@@ -12,10 +12,10 @@
 
             <!-- Text -->
             <p class="p-md">
-              Professional academic writing experts ready to write for you
-              original papers. We are online 24/7 and always responsive. What
-              are you waiting for? Place your order today and experience our
-              quality and timely delivery.
+              Professional academic writing experts ready to write original
+              papers for you. We are online 24/7 and always responsive. What are
+              you waiting for? Place your order today and experience our quality
+              and timely delivery.
             </p>
 
             <!-- Button -->

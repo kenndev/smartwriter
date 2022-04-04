@@ -88,13 +88,14 @@
         >Paper Instructions</label
       >
       <div class="col-sm-9">
-        <textarea
+        <ckeditor :editor="ClassicEditor" v-model="form.paper_instruction" :config="editorConfig"></ckeditor>
+        <!-- <textarea
           class="form-control"
           id="exampleFormControlTextarea1"
           v-model="form.paper_instruction"
           rows="3"
           required
-        ></textarea>
+        ></textarea> -->
       </div>
     </div>
 
@@ -345,6 +346,11 @@ import Multiselect from "@vueform/multiselect";
 import useArticles from "../composable/articles";
 import DropZone from "./DropZone.vue";
 import store from "../store";
+
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+const editorConfig = reactive({
+  
+})
 
 //Instatiation of variables
 const academicSelectArry = ref([]);

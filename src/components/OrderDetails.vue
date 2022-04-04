@@ -5,7 +5,7 @@
   >
    
     <div class="container">
-      <div class="row d-flex align-items-center">
+      <div class="row align-items-center">
         <!-- COURSE DESCRIPTION -->
         <div class="col-lg-8">
           <div class="course-txt pr-30">
@@ -23,8 +23,7 @@
             </div>
 
             <!-- Course Shot Description -->
-            <p class="p-md">
-              {{ order_details.paper_instruction }}
+            <p class="p-md" v-html="order_details.paper_instruction">
             </p>
             <div class="d-flex flex-row gx-5 justify-content-start">
               <!-- Course Short Data -->

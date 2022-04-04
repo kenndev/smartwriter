@@ -9,10 +9,7 @@
   </BreadCrumps>
   <!-- COURSE DETAILS
 				============================================= -->
-  <section
-    id=""
-    class="wide-40 bg-whitesmoke course-section division"
-  >
+  <section id="" class="wide-40 bg-whitesmoke course-section division">
     <div class="container">
       <div class="row">
         <!-- COURSE DESCRIPTION -->
@@ -198,12 +195,26 @@ script.addEventListener("load", initPayPalButton);
 document.body.appendChild(script);
 </script>
 
-<style>
+<style scoped>
 .stick {
   position: relative !important;
   position: sticky !important;
   position: -webkit-sticky !important;
   top: 5rem !important;
   height: 100% !important;
+}
+
+@media (min-width: 576px) {
+  .stick {
+    top: 5rem !important;
+    height: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .stick {
+    top: 5rem !important;
+    height: 100% !important;
+  }
 }
 </style>

@@ -20,9 +20,8 @@
             <p>
               If you need a custom written term, thesis or research paper as
               well as an essay or dissertation sample, choosing Expert Writers -
-              a relatively cheap custom writing service - is a great option. Get
-              any needed writing assistance at a price that every average
-              student can afford.
+              a relatively affordable custom writing service - is a great option. Get
+              any needed writing assistance at a price that every one can afford.
             </p>
           </div>
         </div>
@@ -76,7 +75,7 @@
                 <p>&copy; Copyright Expert Writers</p>
               </li>
               <li>
-                <p>Developed with lots of love and coffee by <a href="mailto:murimi.kenn@mail.com">Creative Kenn</a></p>
+                <p>Developed with lots of love by <a href="https://creativekenn.netlify.app">Creative Kenn</a></p>
               </li>
               <li>
                 <p><a href="tel:+254704103356">+254 704 103 356</a></p>

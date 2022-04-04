@@ -113,6 +113,7 @@ import { ref, reactive } from "vue";
 import router from "../router";
 import { onMounted } from "vue";
 
+
 const { resources, prices, getResources, getApproximatePrice } = useArticles();
 const no_of_pages = ref(1);
 const form = reactive({

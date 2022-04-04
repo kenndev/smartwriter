@@ -56,18 +56,20 @@
               >Paper Instructions</label
             >
             <div class="col-sm-9">
-              <textarea
+             <ckeditor :editor="ClassicEditor" v-model="form.paper_instruction" :config="editorConfig"></ckeditor>
+              <!-- <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 v-model="form.paper_instruction"
                 rows="3"
                 required
-              ></textarea>
+              ></textarea> -->
             </div>
+
           </div>
 
           <!--Upload Materials -->
-          <div class="row mb-3">
+          <div class="row mb-12 mt-10">
             <label for="inputEmail3" class="col-sm-3 col-form-label"
               >Additional Materials</label
             >
@@ -158,7 +160,13 @@ import { useRoute } from "vue-router";
 import Multiselect from "@vueform/multiselect";
 import useArticles from "../composable/articles";
 import DropZone from "./DropZone.vue";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 const { resources, getResourcesAndEditDetails, updatePaperOrder } = useArticles();
+
+const editorConfig = reactive({
+  
+})
 
 const form = reactive({
   type_of_paper: "",

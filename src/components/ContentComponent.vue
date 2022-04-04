@@ -8,7 +8,7 @@
         <div class="col-md-7 col-lg-8">
           <div class="txt-block pc-25">
             <!-- Title -->
-            <h3 class="h3-sm">Cheap Essay Writing Services</h3>
+            <h3 class="h3-sm">Affordable Essay Writing Services</h3>
 
             <!-- Text -->
             <p>
@@ -25,15 +25,15 @@
 
             <!-- List -->
             <p>
-              Our cheap essay writing service has already gained a positive
+              Our affordable essay writing service has already gained a positive
               reputation in this business field. Understandably so, since all
               custom papers produced by our academic writers are individually
               crafted from scratch and written according to all your
               instructions and requirements. We offer APA, MLA, or a Chicago
               style paper in almost 70 disciplines. Here, you can get quality
               custom essays, as well as a dissertation, a research paper, or
-              term papers for sale. Any paper will be written on time for a
-              cheap price.
+              term papers for sale. Any paper will be written on time at an
+              affordable price.
             </p>
           </div>
         </div>

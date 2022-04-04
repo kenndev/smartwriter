@@ -174,10 +174,12 @@ video {
 */
 .wsmenu > .wsmenu-list > li:hover > a {
   color: #f0f0f0;
+  cursor: pointer;
 }
 
 .white-menu .wsmenu > .wsmenu-list > li:hover > a {
   color: #171819;
+  cursor: pointer;
 }
 
 .wsmenu > .wsmenu-list > li a.menuhomeicon {
